@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pesan untuk kekasihku</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .led-text {
+            font-size: 60px;
+            color: red;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+                         0 0 20px rgba(255, 0, 0, 1),
+                         0 0 30px rgba(255, 0, 0, 1),
+                         0 0 40px rgba(255, 0, 0, 1);
+            letter-spacing: 8px;
+            animation: scroll 10s linear infinite;
+        }
+
+        .fade-in-text {
+            font-size: 30px;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        @keyframes scroll {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="led-text">I LOVE YOU ZHEN</div>
+
+    <div class="fade-in-text hidden" id="message1">
+        Tiada yang lebih indah daripada sebuah senyuman, terkadang untuk meraihnya kembali harus dengan mencarinya lalu mempertahankan, aku tau ini adalah berat....
+    </div>
+
+    <div class="fade-in-text hidden" id="message2">
+        Ada saatnya kamu harus tau kalimat satu akan berubah menjadi yang lain ketika ditambahkan dengan yang lainnya
+    </div>
+
+    <div class="fade-in-text hidden" id="message3">
+        Apapun yang terjadi tetaplah bismillah semoga Allah menjaga diri kamu dari yang mencoba menyakitimu
+    </div>
+
+    <div class="fade-in-text hidden" id="message4">
+        Kamu kuat makannya kamu diuji dan semoga ujian itu kamu berhasil menjadi yang lebih baik
+    </div>
+
+    <div class="fade-in-text hidden" id="message5">
+        Kamu cantik dari apa yang aku rasakan dalam perasaan ini
+    </div>
+
+    <div class="fade-in-text hidden" id="message6">
+        Aku harap kamu adalah yang terakhir untukku dan juga aku yang terakhir untukmu
+    </div>
+    <div class="fade-in-text hidden" id="message7">
+         <br>
+        ❤️AKU MENCINTAIMU ZHEN❤️
+    </div>
+
+    <button id="nextButton" onclick="showNextMessage()">Next</button>
+
+    <script>
+        let currentMessage = 1;
+        function showNextMessage() {
+            const message = document.getElementById('message' + currentMessage);
+            if (message) {
+                message.classList.remove('hidden');
+                currentMessage++;
+            }
+            if (currentMessage > 7) {
+                document.getElementById('nextButton').style.display = 'none'; // Hide button after last message
+            }
+        }
+    </script>
+</body>
+</html>
